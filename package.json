@@ -1,0 +1,28 @@
+{
+  "name": "dulces-petalos",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --webpack",
+    "build": "next build --webpack",
+    "start": "next start",
+    "lint": "eslint -c eslint.config.mjs ."
+  },
+  "dependencies": {
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "motion": "^12.7.4",
+    "next": "16.0.0",
+    "react-use": "^17.6.0",
+    "styled-components": "^6.1.19"
+  },
+  "devDependencies": {
+    "@swc/plugin-styled-components": "^8.0.0",
+    "typescript": "^5",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.0.0"
+  }
+}
