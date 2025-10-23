@@ -2,6 +2,9 @@
   --background: #F9F9F9;
   --foreground: #111111;
   --color-grape: #771E42;
+  --color-text-grey: #606060;
+  --color-text: var(--foreground);
+  --color-white: #FFFFFF;
 }
 
 
@@ -18,7 +21,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -webkit-tap-highlight-color: transparent;
   box-sizing: border-box;
-  font-family: var(--font-clash-grotesk), sans-serif;
+  font-family: var(--font-nunito), sans-serif;
   font-feature-settings: 'liga' off, 'clig' off;
   font-size: 100%;
   text-rendering: optimizeLegibility;

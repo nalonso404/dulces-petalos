@@ -8,3 +8,6 @@ export const CLIENT_NAME = process.env.NEXT_PUBLIC_CLIENT_NAME
 
 // LOCALE STUFF
 export const LANG = process.env.NEXT_PUBLIC_LOCALE
+
+
+export * from './strings'

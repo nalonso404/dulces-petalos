@@ -1,6 +1,6 @@
 'use client'
 
-import { TypeProduct, TypeProducts } from '@/schema/product'
+import type { TypeProduct, TypeProducts } from '@/schema/product'
 import { FC, memo } from 'react'
 import styled from 'styled-components'
 
@@ -9,7 +9,7 @@ type Props = {
 }
 
 export const ProductList:FC<Props> = memo(({ data }) => {
-  
+
   return(
     <Ul>
     

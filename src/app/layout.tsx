@@ -1,10 +1,10 @@
 import '../app/globals.css'
 import type { ReactNode } from 'react'
 import type { Metadata, Viewport } from 'next'
-import { Nunito } from 'next/font/google'
+import { Nunito, DM_Sans } from 'next/font/google'
 import ClientProviders from '@/components/ClientProviders'
 import { CLIENT_NAME, HOSTNAME, LANG, PRO } from '@/utils'
-import { TypeLang } from '@/schema/translator'
+import type { TypeLang } from '@/schema/translator'
 
 
 const title = CLIENT_NAME
@@ -39,6 +39,11 @@ const nunito = Nunito({
   variable: '--font-nunito',
 })
 
+const dmsans = DM_Sans({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-dm-sans',
+})
 type TypeRootLayoutProps = {
   children: ReactNode,
   params: Promise<{ lang: TypeLang }>
@@ -48,7 +53,7 @@ export default async function RootLayout({ children, params }:TypeRootLayoutProp
   const { lang } = await params
 
   return (
-    <html lang={lang ?? LANG} className={`${nunito.variable}`}>
+    <html lang={lang ?? LANG} className={`${nunito.variable} ${dmsans.variable}`}>
       <head>
         <link rel='preconnect' href={`https://${HOSTNAME}`} />
         <meta name='apple-mobile-web-app-capable' content='no' />

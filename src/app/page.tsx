@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 import { fetchMethod } from '@/api'
-import { TypeProducts } from '@/schema/product'
+import type { TypeProducts } from '@/schema/product'
 import { MainHome } from '@/components/MainHome'
 
 export const generateMetadata = (): Metadata => {
