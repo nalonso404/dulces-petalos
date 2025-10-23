@@ -6,6 +6,7 @@ import ClientProviders from '@/components/ClientProviders'
 import { CLIENT_NAME, HOSTNAME, LANG, PRO } from '@/utils'
 import { TypeLang } from '@/schema/translator'
 
+
 const title = CLIENT_NAME
 const description = CLIENT_NAME + ' description'
 

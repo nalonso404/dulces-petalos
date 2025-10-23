@@ -46,6 +46,14 @@ body {
   margin: 0;
 }
 
+header {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  width: 100dvw;
+
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -97,7 +105,6 @@ picture,
 figcaption,
 figure,
 footer,
-header,
 hgroup,
 main,
 menu,
