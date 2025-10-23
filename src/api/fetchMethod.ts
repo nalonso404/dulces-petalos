@@ -16,18 +16,19 @@ const defaultOptions: TypeFetchOptions = {
 }
 
 
-export const fetchMethod: TypefetchMethod = async (endpointName, query = {}, fetchOptions) => {
+export const fetchMethod: TypefetchMethod = async ( endpointName, query = {}, fetchOptions?: TypeFetchOptions) => {
   if (!endpointName || !endpoints[endpointName]) {
     throw new Error(`api/endpoints.ts -> No endpoint with namespace: '${endpointName}'`)
   }
 
-  const options = !fetchOptions ? defaultOptions : { ...defaultOptions, ...fetchOptions }
+  const options = { ...defaultOptions, ...fetchOptions }
   const url = endpoints[endpointName](query)
-
-
   const body = options.body ?? null
 
-  const res: Response = await fetch(url, { ...options, body })
+  const { next, ...rest } = options
+
+  const res: Response = await fetch(url, { ...rest, body } as RequestInit) 
+  
   switch (res.status) {
     case 204:
       return res

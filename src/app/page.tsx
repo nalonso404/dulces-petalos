@@ -18,12 +18,11 @@ export default async function Home() {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
-    }
-  }) as Response
+    },
+    next: { revalidate: 3600 } 
+  },) as Response
 
   const data = await res.json() as TypeProducts
   
-  return (
-    <MainHome data={data} />
-  )
+  return <MainHome data={data} />
 }

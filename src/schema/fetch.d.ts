@@ -13,6 +13,10 @@ export type TypeFetchOptions = {
   redirect?: 'follow' | 'manual' | 'error', 
   referrerPolicy?: 'no-referrer' | 'no-referrer-when-downgrade' | 'origin' | 'origin-when-cross-origin' | 'same-origin' | 'strict-origin' | 'strict-origin-when-cross-origin' | 'unsafe-url' 
   body?: any 
+  next?: {
+    revalidate?: number; // ISR: seconds
+    tags?: string | string[]; // optional, for cache tags
+  }
 }
 
 export type TypeQuery = {
