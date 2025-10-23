@@ -44,14 +44,16 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    ".next/dev/types/**/*.ts"
+    ".next/dev/types/**/*.ts",
+    "jest.config.ts", 
+    "src",
+    "src/**/*",
+    "src/__tests__/**/*"
   ],
   "exclude": [
     ".yarn",
     "node_modules",
     "**/*.spec.ts",
     "**/*.spec.tsx",
-    "**/*.test.ts",
-    "**/*.test.tsx"
   ]
 }

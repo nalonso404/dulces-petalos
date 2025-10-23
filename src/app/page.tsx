@@ -6,7 +6,7 @@ import { MainHome } from '@/components/MainHome'
 export const generateMetadata = (): Metadata => {
   return {
     title: 'Dulces Pétalos',
-    description: 'Dulces éetalos',
+    description: 'Dulces Pétalos',
     alternates: {
       canonical: '/'
     }
@@ -16,7 +16,6 @@ export const generateMetadata = (): Metadata => {
 export default async function Home() {
   const res = await fetchMethod('products', null, {
     method: 'GET',
-    cache: 'no-store',
     headers: {
       'Content-Type': 'application/json',
     }
