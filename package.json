@@ -8,7 +8,6 @@
     "start": "next start",
     "lint": "eslint -c eslint.config.mjs .",
     "test": "jest"
-
   },
   "dependencies": {
     "motion": "^12.7.4",
@@ -20,10 +19,11 @@
   },
   "devDependencies": {
     "@swc/plugin-styled-components": "^8.0.0",
-    "@testing-library/jest-dom": "^6.9.1",
-    "@testing-library/react": "^16.3.0",
-    "@testing-library/user-event": "^14.6.1",
-    "@types/jest": "^30.0.0",
+    "@testing-library/dom": "^12.2.0",
+    "@testing-library/jest-dom": "^6.11.0",
+    "@testing-library/react": "^14.1.1",
+    "@testing-library/user-event": "^14.6.2",
+    "@types/jest": "^30.2.0",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

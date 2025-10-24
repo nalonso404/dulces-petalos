@@ -4,6 +4,7 @@ import { FC, memo } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import styled from 'styled-components'
+import { motion } from 'framer-motion'
 import type { TypeProduct } from '@/schema/product'
 import { shadows, font16_24, font20_30, font28_42 } from '@/styles'
 import { SvgIcon } from './SvgIcon'
@@ -16,7 +17,7 @@ export const ProductCard:FC<Props> = memo(({ data }) => {
   const { id, name, binomialName, price, imgUrl } = data
 
   return(
-    <Li>
+    <Li variants={cardVariants} initial='initial' animate='animate' exit='exit' transition={{ duration: 0.25, ease: 'easeOut' }} layout>
       <Link href={`/product/${id}`}>
         <div>
           <h2>{name}</h2>
@@ -24,8 +25,8 @@ export const ProductCard:FC<Props> = memo(({ data }) => {
           <div className='image_wrapper'>
             <Image src={imgUrl} alt={name} fill sizes='(max-width: 768px) 100vw, 352px'/>
             <div className='price_wrapper'>
-              <div><span>€{price}</span></div>
-              <div><SvgIcon src={'/svg/i--arrow.svg'} size={24} alt='Arrow icon'/></div>
+              <div> <span>€{price}</span> </div>
+              <div> <SvgIcon src={'/svg/i--arrow.svg'} size={24} alt='Arrow icon'/> </div>
             </div>
           </div>
         </div>
@@ -35,7 +36,7 @@ export const ProductCard:FC<Props> = memo(({ data }) => {
 })
 
 
-const Li = styled.li`
+const Li = styled(motion.li)`
   background-color: var(--color-white);
   border-radius: 32px;
   box-shadow: ${shadows.layered};
@@ -43,6 +44,12 @@ const Li = styled.li`
   flex-direction: column;
   height: 422px;
   padding: 16px;
+  transition: all 0.4s cubic-bezier(0.1, 0, 0.3, 1);
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  }
 
   .image_wrapper {
     border-radius: 24px;
@@ -98,3 +105,9 @@ const Li = styled.li`
     color: var(--color-text-grey);
   }
 `
+
+const cardVariants = { 
+  initial: { opacity: 0, scale: 0.95, y: 20 }, 
+  animate: { opacity: 1, scale: 1, y: 0 }, 
+  exit: { opacity: 0, scale: 0.9, y: -20 }, 
+}
