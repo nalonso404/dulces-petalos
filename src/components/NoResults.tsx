@@ -1,9 +1,9 @@
 'use client'
 
-import { FC,  } from 'react'
+import { FC } from 'react'
 import styled from 'styled-components'
 
-type Props ={
+type Props = {
   searchItem: string
 }
 
