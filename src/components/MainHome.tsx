@@ -36,6 +36,7 @@ export const MainHome:FC<Props> = memo(({ data }) => {
 
 const Main = styled.main`
   background-color: var(--background);
-  height: calc(100vh - 66px);
+  height: calc(100% - 66px);
+  padding: 0 24px;
   width: 100%;
 `

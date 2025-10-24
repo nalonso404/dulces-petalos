@@ -5,6 +5,7 @@ import { Nunito, DM_Sans } from 'next/font/google'
 import ClientProviders from '@/components/ClientProviders'
 import { CLIENT_NAME, HOSTNAME, LANG, PRO } from '@/utils'
 import type { TypeLang } from '@/schema/translator'
+import { Navbar } from '@/components/Navbar'
 
 
 const title = CLIENT_NAME
@@ -61,6 +62,9 @@ export default async function RootLayout({ children, params }:TypeRootLayoutProp
       </head>
       <body>
         <ClientProviders>
+          <header>
+            <Navbar/>
+          </header>
           {children}
         </ClientProviders>
       </body>

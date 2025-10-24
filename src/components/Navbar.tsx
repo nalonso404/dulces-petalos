@@ -1,16 +1,14 @@
 'use client'
 import { FC } from 'react'
 import styled from 'styled-components'
-import dynamic from 'next/dynamic'
-
-const DynamicSvg =  dynamic(() => import('./SvgIcon').then(mod => mod.SvgIcon), { ssr: false })
+import { SvgIcon } from './SvgIcon'
 
 export const Navbar:FC = ({  }) => {
 
   return (
     <Nav>
       <a href={'/'}>
-        <DynamicSvg src={'/svg/logo.svg'} size={50} alt='Dulces Pétalos icon' />
+        <SvgIcon src={'/svg/logo.svg'} size={50} alt='Dulces Pétalos icon' />
       </a>
     </Nav>
   )

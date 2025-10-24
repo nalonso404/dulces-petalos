@@ -3,7 +3,7 @@
 import { Dispatch, FC, SetStateAction, useMemo } from 'react'
 import styled from 'styled-components'
 import { SvgIcon } from './SvgIcon'
-import { font16_24 } from '@/styles/fontSizes'
+import { font16_24 } from '@/styles'
 
 type TypeProps = {
   searchItem: string
@@ -69,9 +69,9 @@ const Label = styled.label`
     }
   
     &:focus {
-      outline: none;
-      box-shadow: none;
       border-color: transparent;
+      box-shadow: none;
+      outline: none;
     }
   }
 `

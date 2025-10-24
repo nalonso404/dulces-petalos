@@ -15,3 +15,9 @@ export const shadows = {
     0px 4px 4px -1px rgba(12, 12, 13, 0.10)
   `,
 }
+
+export const mobile = (styles: any) => css`
+  @media (max-width: 768px) {
+    ${styles}
+  }
+`
