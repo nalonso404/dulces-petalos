@@ -2,10 +2,10 @@ import '../app/globals.css'
 import type { ReactNode } from 'react'
 import type { Metadata, Viewport } from 'next'
 import { Nunito, DM_Sans } from 'next/font/google'
-import ClientProviders from '@/components/ClientProviders'
 import { CLIENT_NAME, HOSTNAME, LANG, PRO } from '@/utils'
 import type { TypeLang } from '@/schema/translator'
 import { Navbar } from '@/components/Navbar'
+import ClientProviders from '@/components/ClientProviders'
 
 
 const title = CLIENT_NAME
@@ -50,7 +50,7 @@ type TypeRootLayoutProps = {
   params: Promise<{ lang: TypeLang }>
 }
 
-export default async function RootLayout({ children, params }:TypeRootLayoutProps) {
+export default async function RootLayout({ children, params }: TypeRootLayoutProps) {
   const { lang } = await params
 
   return (
@@ -63,11 +63,12 @@ export default async function RootLayout({ children, params }:TypeRootLayoutProp
       <body>
         <ClientProviders>
           <header>
-            <Navbar/>
+            <Navbar />
           </header>
-          {children}
         </ClientProviders>
+        {children}
       </body>
     </html>
   )
 }
+

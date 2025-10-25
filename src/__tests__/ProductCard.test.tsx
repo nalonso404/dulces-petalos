@@ -5,11 +5,7 @@ import type { TypeProduct } from '@/schema/product'
 
 jest.mock('next/image', () => ({
   __esModule: true,
-  default: (props: any) => {
-    const { fill, ...rest } = props 
-    // eslint-disable-next-line @next/next/no-img-element
-    return <img {...rest} />
-  },
+  default: require('../__mocks__/nextImage').default
 }))
 
 

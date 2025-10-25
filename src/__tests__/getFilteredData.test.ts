@@ -1,19 +1,10 @@
-import { normalizeString } from '@/utils'
+import { getFilteredData } from '@/components/MainHome'
 
 type Products = {
   name: string
   binomialName: string
 }[]
 
-const getFilteredData = (data: Products, searchItem: string) => {
-  const normalizedSearch = normalizeString(searchItem)
-
-  return data.filter((item) => {
-    const name = normalizeString(item.name)
-    const binomial = normalizeString(item.binomialName)
-    return name.includes(normalizedSearch) || binomial.includes(normalizedSearch)
-  })
-}
 
 jest.mock('@/utils', () => ({
   normalizeString: (str: string) => str.toLowerCase(),

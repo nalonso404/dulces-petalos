@@ -10,17 +10,17 @@ type TypeProps = {
   setSearchItem: Dispatch<SetStateAction<string>>
   placeHolder: string
   name: string
-  icon?: string | boolean
+  icon?: boolean
   label?: string
 }
 
 
 const getIcon = (icon, name) => {
   if(!icon) return false
-  if(typeof icon === 'boolean' || typeof icon === 'string') {
+  if(typeof icon === 'boolean') {
     if (name === 'search') {
-      const Icon = <SvgIcon key="search-icon" src="/svg/i--search.svg" width={24} alt="Search icon" />
-      return [Icon, true]
+      const Icon = <SvgIcon key='search-icon' src='/svg/i--search.svg' width={24} alt='Search icon' />
+      return Icon
     }
   }
 }
@@ -30,7 +30,7 @@ export const Input:FC<TypeProps> = ({ searchItem, setSearchItem, placeHolder, na
   const ButtonIcon = useMemo(() => getIcon(icon, name), [icon, name])
 
   return(
-    <Label>
+    <Label className='input-wrapper'>
       {ButtonIcon && ButtonIcon}
       <input name={name} type='text' placeholder={placeHolder} value={searchItem} onChange={(e) => setSearchItem(e.target.value)}/>
       {label && <span>{label}</span>}
@@ -40,24 +40,22 @@ export const Input:FC<TypeProps> = ({ searchItem, setSearchItem, placeHolder, na
 }
 
 const Label = styled.label`
-  align-items: center;
+  /* align-items: center;
   background-color: var(--color-white);
   border-radius: 8px;
   border: 1px solid #BBBBBB;
   display: flex;
   flex-direction: row;
   gap: 7px;
-  margin: 50px auto 0;
-  max-width: 600px;
   padding: 8px 16px;
-  width: 100%;
+  width: 100%; */
 
   > input {
-    ${font16_24(400, '--font-dm-sans')}
+    /* ${font16_24(400, '--font-dm-sans')}
     background-color: var(--color-white);
     border-color: transparent;
     color: var(--color-text-grey);
-    width: 100%;
+    width: 100%; */
 
     &:-webkit-autofill,
     &:-webkit-autofill:hover,

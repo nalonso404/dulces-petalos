@@ -1,6 +1,6 @@
 'use client'
-
+import { ErrorFeedBack } from '@/components/ErrorFeedBack'
 
 export default function Error() {
-  return <p>Something went wrong, try again later</p>
+  return <ErrorFeedBack data='error' />
 }

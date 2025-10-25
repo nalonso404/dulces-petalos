@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import { fetchMethod } from '@/api'
 import type { TypeProducts } from '@/schema/product'
 import { MainHome } from '@/components/MainHome'
+import { notFound } from 'next/navigation'
 
 export const generateMetadata = (): Metadata => {
   return {
@@ -21,6 +22,8 @@ export default async function Home() {
     },
     next: { revalidate: 3600 } 
   },) as Response
+
+  if(!res.ok) notFound()
 
   const data = await res.json() as TypeProducts
   
