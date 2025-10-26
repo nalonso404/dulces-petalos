@@ -1,18 +1,20 @@
 'use client'
 
-import type { TypeProducts } from '@/schema/product'
+import type { TypeProduct, TypeProducts } from '@/schema/product'
 import { FC, memo, useMemo, useState } from 'react'
 import styled from 'styled-components'
 import { Input } from './Input'
 import { ProductList } from './ProductList'
 import { normalizeString } from '@/utils'
 import { NoResults } from './NoResults'
+import { mobile } from '@/styles'
 
 type Props = {
   data: TypeProducts
 }
 
-export const getFilteredData = (data, searchItem) => {
+export const getFilteredData = (data: TypeProducts ,searchItem: string): TypeProduct[] => {
+  if (!Array.isArray(data) || !searchItem) return data
   const normalizedSearch = normalizeString(searchItem)
 
   return data.filter((item) => {
@@ -44,6 +46,10 @@ export const MainHome:FC<Props> = memo(({ data }) => {
 
 
 const Main = styled.main`
+  ${mobile(`
+    padding: 0 16px 32px;
+  `)}
+  
   background-color: var(--background);
   height: calc(100% - 66px);
   padding: 0 24px 50px;

@@ -3,6 +3,12 @@ import { getFilteredData } from '@/components/MainHome'
 type Products = {
   name: string
   binomialName: string
+  id: string
+  price: number
+  imgUrl: string
+  wateringsPerWeek: number
+  fertilizerType: string
+  heightInCm: number
 }[]
 
 
@@ -12,9 +18,33 @@ jest.mock('@/utils', () => ({
 
 describe('getFilteredData', () => {
   const products: Products = [
-    { name: 'Rosa', binomialName: 'Rosa rubiginosa' },
-    { name: 'Lavanda', binomialName: 'Lavandula angustifolia' },
-    { name: 'Tulipán', binomialName: 'Tulipa gesneriana' },
+    {
+      name: 'Rosa', binomialName: 'Rosa rubiginosa',
+      id: '',
+      price: 0,
+      imgUrl: '',
+      wateringsPerWeek: 0,
+      fertilizerType: '',
+      heightInCm: 0
+    },
+    {
+      name: 'Lavanda', binomialName: 'Lavandula angustifolia',
+      id: '',
+      price: 0,
+      imgUrl: '',
+      wateringsPerWeek: 0,
+      fertilizerType: '',
+      heightInCm: 0
+    },
+    {
+      name: 'Tulipán', binomialName: 'Tulipa gesneriana',
+      id: '',
+      price: 0,
+      imgUrl: '',
+      wateringsPerWeek: 0,
+      fertilizerType: '',
+      heightInCm: 0
+    },
   ]
 
   it('returns all products if search is empty', () => {
