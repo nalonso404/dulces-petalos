@@ -3,6 +3,8 @@ import type { TypeProduct } from '@/schema/product'
 import { notFound } from 'next/navigation'
 import { MainProductDetail } from '@/components/MainProductDetail'
 
+export const revalidate = 3600
+
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params
 
@@ -47,8 +49,7 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
   try {
     const res = await fetchMethod('product', { id: id }, {
       method: 'GET',
-      headers: { 'Content-Type': 'application/json' },
-      next: { revalidate: 3600 }
+      headers: { 'Content-Type': 'application/json' }
     }) as Response
 	
     if(!res.ok) notFound()
@@ -58,6 +59,5 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
     notFound()
 
   }
-
   return <MainProductDetail data={data} />
 }

@@ -4,6 +4,8 @@ import type { TypeProducts } from '@/schema/product'
 import { MainHome } from '@/components/MainHome'
 import { notFound } from 'next/navigation'
 
+export const revalidate = 3600
+
 export const generateMetadata = (): Metadata => {
   return {
     title: 'Dulces Pétalos',
@@ -22,8 +24,7 @@ export default async function Home() {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-      },
-      next: { revalidate: 3600 } 
+      }
     }) as Response
   
     if(!res.ok) notFound()
