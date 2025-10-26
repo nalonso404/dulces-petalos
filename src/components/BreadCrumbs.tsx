@@ -28,8 +28,9 @@ export const BreadCrumbs:FC<TypeProps> = ({ data }) => {
 const Nav = styled.nav`
   display: flex;
   flex-direction: row;
-  margin-top: 50px;
-
+  margin: 50px auto 0;
+  max-width: 1200px;
+  
   > ol {
     list-style: none;
     display: flex;

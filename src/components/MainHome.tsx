@@ -8,6 +8,7 @@ import { ProductList } from './ProductList'
 import { normalizeString } from '@/utils'
 import { NoResults } from './NoResults'
 import { mobile } from '@/styles'
+import { Suspense } from 'react'
 
 type Props = {
   data: TypeProducts
@@ -34,22 +35,25 @@ export const MainHome:FC<Props> = memo(({ data }) => {
         <Input name='search' searchItem={searchItem} setSearchItem={setSearchItem} placeHolder='Busca en nuestra tienda' icon={true}/>
       </div>
       <section>
-        {filtered.length > 0 ?
-          <ProductList data={filtered} />
-          :
-          <NoResults searchItem={searchItem} />
-        }
+        <Suspense fallback={<div>Cargando productos...</div>}>
+          {filtered.length > 0 ?
+            <ProductList data={filtered} />
+            :
+            <NoResults searchItem={searchItem} />
+          }
+        </Suspense>
       </section>
     </Main>
   )
 })
 
 
+
 const Main = styled.main`
   ${mobile(`
     padding: 0 16px 32px;
   `)}
-  
+
   background-color: var(--background);
   height: calc(100% - 66px);
   padding: 0 24px 50px;

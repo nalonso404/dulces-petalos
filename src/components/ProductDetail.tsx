@@ -19,7 +19,7 @@ export const ProductDetail:FC<Props> = memo(({ data }) => {
   return(
     <Article data-id={id} variants={cardVariants} initial='initial' animate='animate' exit='exit' transition={{ duration: 0.25, ease: 'easeOut' }} layout>
       <div className='image_wrapper'>
-        <Image src={imgUrl} alt={name} fill sizes='(max-width: 768px) 100vw, 905px'/>
+        <Image src={imgUrl} alt={name} fill sizes='(max-width: 768px) 100vw, (max-width: 1200px) 70vw, 905px' priority={true}/>
       </div>
       <div className='description_wrapper'>
         <hgroup>

@@ -18,13 +18,13 @@ export const ProductCard:FC<Props> = memo(({ data, idx }) => {
   const { id, name, binomialName, price, imgUrl } = data
 
   return(
-    <Li variants={cardVariants} initial='initial' animate='animate' exit='exit' transition={{ duration: 0.25, ease: 'easeOut' }} layout>
+    <Li variants={cardVariants} initial='initial' animate='animate' exit='exit' transition={{ duration: 0.25, ease: 'easeOut' }}>
       <Link href={`/product/${id}`}>
         <div>
           <h2>{name}</h2>
           <span>{binomialName}</span>
           <div className='image_wrapper'>
-            <Image src={imgUrl} alt={name} fill sizes='(max-width: 768px) 100vw, 352px' priority={idx < 3}/>
+            <Image src={imgUrl} alt={name} fill sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 384px' loading={idx < 3 ? 'eager' : 'lazy'}/>
             <div className='price_wrapper'>
               <div> <span>€{price}</span> </div>
               <div> <SvgIcon src={'/svg/i--arrow.svg'} size={24} alt='Arrow icon'/> </div>

@@ -30,5 +30,10 @@ const Main = styled.main`
   height: calc(100% - 66px);
   padding: 0 24px;
   width: 100%;
+
+  > section {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
   
 `
