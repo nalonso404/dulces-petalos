@@ -22,6 +22,11 @@ export const metadata: Metadata = {
   applicationName: title,
   appleWebApp: { capable: false, title: title, statusBarStyle: 'black' },
   alternates: { canonical: 'https://' + HOSTNAME },
+  icons: {
+    icon: '/icon.png',
+    apple: '/apple-icon.png',
+  },
+  manifest: '/manifest.ts',
 }
 
 export const viewport: Viewport = {
@@ -45,6 +50,7 @@ const dmsans = DM_Sans({
   display: 'swap',
   variable: '--font-dm-sans',
 })
+
 type TypeRootLayoutProps = {
   children: ReactNode,
   params: Promise<{ lang: TypeLang }>
@@ -58,7 +64,6 @@ export default async function RootLayout({ children, params }: TypeRootLayoutPro
       <head>
         <link rel='preconnect' href={`https://${HOSTNAME}`} />
         <meta name='apple-mobile-web-app-capable' content='no' />
-        <meta name='viewport' content='width=device-width, initial-scale=1' />
       </head>
       <body>
         <ClientProviders>

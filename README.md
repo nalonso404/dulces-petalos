@@ -1,20 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌸 Dulces Pétalos
 
-## Getting Started
+Aplicación desarrollada con **Next.js 16 (App Router)** y **styled-components**, que muestra un catálogo de productos florales consumiendo una API externa (headless e-commerce).
 
-First, run the development server:
+---
+
+## 🚀 Scripts
+
+| Comando | Descripción |
+|----------|--------------|
+| `yarn dev` | Inicia el servidor de desarrollo en `http://localhost:3000` |
+| `yarn build` | Crea una build optimizada para producción (usa ISR y SSG) |
+| `yarn start` | Inicia el servidor con la build generada |
+| `yarn lint` | Ejecuta ESLint para comprobar el código |
+| `yarn test` | Lanza los tests con Jest y Testing Library |
+
+---
+
+## ⚙️ Variables de entorno
+
+Crea un archivo `.env.local` (puedes basarte en el ejemplo `.env.local.example` incluido):
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+# BASE
+NEXT_PUBLIC_LOCALE='es'
+NEXT_PUBLIC_VERCEL_ENV='development'
+NEXT_PUBLIC_PROJECT_HOSTNAME='dulces-petalos.jakala.es'
+NEXT_PUBLIC_CLIENT_NAME='Dulces Pétalos'
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# API
+JAKALA_API_VERSION='v1'
+JAKALA_API='https://dulces-petalos.jakala.es/api/v1'
 
 
 # 🌸 Floristería Dulces Pétalos
