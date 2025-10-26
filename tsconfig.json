@@ -54,7 +54,8 @@
     "src",
     "src/**/*",
     "src/__tests__/**/*",
-    "next.config.ts"
+    "next.config.ts",
+    "eslint.config.mjs"
   ],
   "exclude": [
     ".yarn",

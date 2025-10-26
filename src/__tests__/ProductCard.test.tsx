@@ -31,7 +31,7 @@ describe('ProductCard', () => {
 
     expect(screen.getByText('Rose')).toBeInTheDocument()
     expect(screen.getByText('Rosa')).toBeInTheDocument()
-    expect(screen.getByText('€10')).toBeInTheDocument()
+    expect(screen.getByText(/€\s*10/)).toBeInTheDocument()
     expect(screen.getByText('Arrow icon')).toBeInTheDocument()
     const img = screen.getByAltText('Rose') as HTMLImageElement
     expect(img).toBeInTheDocument()

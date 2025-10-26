@@ -47,8 +47,18 @@ const Nav = styled.nav`
         justify-content: center;
         width: 24px;
       }
-    }
 
+      &:first-child a {
+        color: var(--color-text-grey);
+        text-decoration: none;
+        transition: color 0.2s ease-in-out;
+
+        &:hover {
+          color: var(--color-text);
+        
+        }
+      }
+    }
   }
 
 `

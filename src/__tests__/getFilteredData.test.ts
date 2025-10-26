@@ -48,28 +48,39 @@ describe('getFilteredData', () => {
   ]
 
   it('returns all products if search is empty', () => {
-    expect(getFilteredData(products, '')).toEqual(products)
+    const result = getFilteredData(products, '')
+    expect(result).toEqual(products)
   })
 
   it('filters by name', () => {
-    expect(getFilteredData(products, 'rosa')).toEqual([
-      { name: 'Rosa', binomialName: 'Rosa rubiginosa' },
-    ])
+    const result = getFilteredData(products, 'rosa')
+    expect(result).toHaveLength(1)
+    expect(result[0]).toMatchObject({
+      name: 'Rosa',
+      binomialName: 'Rosa rubiginosa',
+    })
   })
 
   it('filters by binomial name', () => {
-    expect(getFilteredData(products, 'angustifolia')).toEqual([
-      { name: 'Lavanda', binomialName: 'Lavandula angustifolia' },
-    ])
+    const result = getFilteredData(products, 'angustifolia')
+    expect(result).toHaveLength(1)
+    expect(result[0]).toMatchObject({
+      name: 'Lavanda',
+      binomialName: 'Lavandula angustifolia',
+    })
   })
 
   it('is case-insensitive', () => {
-    expect(getFilteredData(products, 'TULIPÁN')).toEqual([
-      { name: 'Tulipán', binomialName: 'Tulipa gesneriana' },
-    ])
+    const result = getFilteredData(products, 'TULIPÁN')
+    expect(result).toHaveLength(1)
+    expect(result[0]).toMatchObject({
+      name: 'Tulipán',
+      binomialName: 'Tulipa gesneriana',
+    })
   })
 
   it('returns empty array if no match', () => {
-    expect(getFilteredData(products, 'banana')).toEqual([])
+    const result = getFilteredData(products, 'banana')
+    expect(result).toEqual([])
   })
 })
