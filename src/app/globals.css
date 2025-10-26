@@ -100,7 +100,6 @@ body {
 
 body > main {
   flex-grow: 2;
-  width: 100%;
 }
 
 article,
@@ -118,53 +117,3 @@ section,
 summary {
   display: block;
 }
-
-
-nav.menu {
-  align-items: center;
-  background-color: #FFFFFF;
-  display: flex;
-  flex-direction: row;
-  height: 66px;
-}
-
-nav.menu ul{
-  list-style: none;
-}
-
-nav.menu a { 
-  display: block;
-  height: 100%;
-  width: 100%;
-}
-
-
-.input-wrapper {
-  align-items: center;
-  background-color: white;
-  border-radius: 8px;
-  border: 1px solid #BBBBBB;
-  display: flex;
-  margin: 0 auto;
-  padding: 8px 16px;
-  width: min(600px, 100%);
-
-}
-
-.input-wrapper input {
-  background-color: var(--color-white);
-  border-color: transparent;
-  border: none;
-  color: var(--color-text-grey);
-  font-family: var(--font-nunito);
-  font-size: 16px;
-  font-weight: 400;
-  letter-spacing: 0;
-  line-height: 24px;
-  outline: none;
-  
-}
-
-  .search_by {
-    margin: 50px auto 0;
-  }

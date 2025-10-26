@@ -49,8 +49,8 @@ const Main = styled.main`
   padding: 0 24px 50px;
   width: 100%;
 
-  /* .search_by {
+  .search_by {
     margin: 50px auto 0;
     max-width: 600px;
-  } */
+  }
 `

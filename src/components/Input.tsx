@@ -40,7 +40,7 @@ export const Input:FC<TypeProps> = ({ searchItem, setSearchItem, placeHolder, na
 }
 
 const Label = styled.label`
-  /* align-items: center;
+  align-items: center;
   background-color: var(--color-white);
   border-radius: 8px;
   border: 1px solid #BBBBBB;
@@ -48,14 +48,14 @@ const Label = styled.label`
   flex-direction: row;
   gap: 7px;
   padding: 8px 16px;
-  width: 100%; */
+  width: 100%;
 
   > input {
-    /* ${font16_24(400, '--font-dm-sans')}
+    ${font16_24(400, '--font-dm-sans')}
     background-color: var(--color-white);
     border-color: transparent;
     color: var(--color-text-grey);
-    width: 100%; */
+    width: 100%;
 
     &:-webkit-autofill,
     &:-webkit-autofill:hover,

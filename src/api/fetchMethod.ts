@@ -30,9 +30,6 @@ export const fetchMethod: TypefetchMethod = async ( endpointName, query = {}, fe
   const fetchConfig: RequestInit & { next?: { revalidate?: number } } = { ...rest, body }
   if (next && typeof window === 'undefined') {
     (fetchConfig as any).next = next
-    console.log('✅ Revalidate reenviado a fetch:', next)
-  } else {
-    console.log('⚠️ No se reenvía revalidate, entorno cliente o undefined')
   }
 
   const res: Response = await fetch(url, fetchConfig)

@@ -65,8 +65,8 @@ export default async function RootLayout({ children, params }: TypeRootLayoutPro
           <header>
             <Navbar />
           </header>
+          {children}
         </ClientProviders>
-        {children}
       </body>
     </html>
   )

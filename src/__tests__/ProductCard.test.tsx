@@ -27,7 +27,7 @@ describe('ProductCard', () => {
   }
 
   it('renders product information correctly', () => {
-    render(<ProductCard data={mockProduct} />)
+    render(<ProductCard data={mockProduct} idx={1} />)
 
     expect(screen.getByText('Rose')).toBeInTheDocument()
     expect(screen.getByText('Rosa')).toBeInTheDocument()

@@ -18,7 +18,7 @@ export const MainProductDetail:FC<Props> = memo(({ data }) => {
     <Main>
       <BreadCrumbs data={name} />
       <section aria-label='product detail'>
-        <ProductDetail data={data} />
+        <ProductDetail key={data.id} data={data} />
       </section>
     </Main>
   )

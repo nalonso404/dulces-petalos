@@ -11,9 +11,10 @@ import { SvgIcon } from './SvgIcon'
 
 type Props = {
   data: TypeProduct
+  idx: number
 }
 
-export const ProductCard:FC<Props> = memo(({ data }) => {
+export const ProductCard:FC<Props> = memo(({ data, idx }) => {
   const { id, name, binomialName, price, imgUrl } = data
 
   return(
@@ -23,7 +24,7 @@ export const ProductCard:FC<Props> = memo(({ data }) => {
           <h2>{name}</h2>
           <span>{binomialName}</span>
           <div className='image_wrapper'>
-            <Image src={imgUrl} alt={name} fill sizes='(max-width: 768px) 100vw, 352px'/>
+            <Image src={imgUrl} alt={name} fill sizes='(max-width: 768px) 100vw, 352px' priority={idx < 3}/>
             <div className='price_wrapper'>
               <div> <span>€{price}</span> </div>
               <div> <SvgIcon src={'/svg/i--arrow.svg'} size={24} alt='Arrow icon'/> </div>
