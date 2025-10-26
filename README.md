@@ -16,21 +16,96 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# 🌸 Floristería Dulces Pétalos
 
-## Learn More
+Aplicación web desarrollada en **React** para mostrar el catálogo de productos de la floristería **Dulces Pétalos**.  
+El proyecto tiene como objetivo practicar el desarrollo de una SPA con consumo de API, navegación entre vistas y filtrado dinámico.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🪴 Introducción
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Esta aplicación muestra el catálogo de flores y plantas de **Dulces Pétalos**, permitiendo al usuario:
 
-## Deploy on Vercel
+- Visualizar el listado de productos disponibles.
+- Consultar los detalles de cada producto.
+- Filtrar productos en tiempo real mediante un buscador.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+El proyecto se desarrollará con **React**, pudiendo utilizar librerías adicionales según sea necesario.  
+La entrega se realizará en un **repositorio público de GitHub**.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+> 💡 Este ejercicio no es un examen. Lo más importante es el proceso y la conversación técnica posterior.
+
+---
+
+## 🧭 Estructura de vistas
+
+### 1. Listado de productos
+
+- Muestra todos los productos obtenidos del endpoint `GET /api/v1/product`.
+- Permite filtrar los resultados por texto (nombre o nombre científico).
+- Al seleccionar un producto, se navega a su vista de detalle.
+- Disposición responsive:
+  - Máximo **3 productos por fila**.
+  - Se adapta automáticamente al tamaño de pantalla.
+
+### 2. Detalle de producto
+
+- Muestra la información detallada de un producto obtenido mediante `GET /api/v1/product/:id`.
+- Incluye botón o enlace para **volver atrás** a la vista de listado.
+
+---
+
+## 🧩 Componentes principales
+
+### 🏠 Cabecera
+- Muestra el **logo de la floristería**, que funciona como enlace al *home*.
+
+### 🔍 Buscador
+- Permite introducir una cadena de texto.
+- Filtra productos **en tiempo real**, comparando:
+  - `nombre`
+  - `nombre científico`
+
+### 💐 Tarjeta de producto
+- Muestra la información básica de un producto:
+  - Imagen
+  - Nombre
+  - Nombre científico
+  - Precio
+- Al hacer clic, lleva al detalle del producto.
+
+### 🧭 Breadcrumbs
+- Muestra el camino de navegación actual.
+- Incluye siempre el enlace **Inicio** para volver al home.
+
+### 🖼️ Imagen del producto
+- Muestra la fotografía del producto en la vista de detalle.
+
+### 🪻 Descripción del producto
+- Presenta la información completa:
+  - Nombre
+  - Nombre científico
+  - Precio
+  - Riegos por semana
+  - Fertilizante recomendado
+
+---
+
+## 🌐 API
+
+Base URL:  https://dulces-petalos.jakala.es/
+
+
+### Endpoints disponibles:
+
+| Descripción | Método | Endpoint |
+|--------------|---------|----------|
+| Listado de productos | `GET` | `/api/v1/product` |
+| Detalle de producto  | `GET` | `/api/v1/product/:id` |
+
+Ejemplo:
+```bash
+GET https://dulces-petalos.jakala.es/api/v1/product/1
+

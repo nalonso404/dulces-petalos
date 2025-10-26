@@ -15,17 +15,23 @@ export const generateMetadata = (): Metadata => {
 }
 
 export default async function Home() {
-  const res = await fetchMethod('products', null, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    next: { revalidate: 3600 } 
-  },) as Response
+  let data: TypeProducts | null = null
 
-  if(!res.ok) notFound()
-
-  const data = await res.json() as TypeProducts
+  try {
+    const res = await fetchMethod('products', null, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      next: { revalidate: 3600 } 
+    }) as Response
   
+    if(!res.ok) notFound()
+  
+    data = await res.json() as TypeProducts
+    
+  } catch (error) {
+    notFound()
+  }
   return <MainHome data={data} />
 }
