@@ -14,12 +14,17 @@ export const ErrorFeedBack:FC<Props> = ({ data }) => {
     <Div>
       {data === 'not-found'? 
         <>
-          <h2> The page you are looking for does not exist.</h2>
-          <Link href="/">Back to homepage</Link>
+          <h2> 404 - Página no encontrada</h2>
+          <p>Lo sentimos, esta flor no existe 🌸</p>
+          <Link href="/">Volver al inicio</Link>
         </>
 
         :
-        <p>Something went wrong, try again later</p>
+        <>
+          <h2>Uy 😥 Ha ocurrido un error</h2>
+          <p>Error interno del servidor (500).</p>
+          <p>No hemos podido cargar el contenido ahora mismo…</p>
+        </>
       }
 
     </Div>

@@ -30,7 +30,7 @@ NEXT_PUBLIC_CLIENT_NAME='Dulces Pétalos'
 # API
 JAKALA_API_VERSION='v1'
 JAKALA_API='https://dulces-petalos.jakala.es/api/v1'
-
+```
 
 # 🌸 Floristería Dulces Pétalos
 
