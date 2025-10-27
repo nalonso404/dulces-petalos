@@ -11,7 +11,7 @@ type Props = {
 }
 
 export const ProductList:FC<Props> = memo(({ data }) => {
-  return(
+  return (
     <Ul>
       {data.map((product, idx) => <ProductCard data={product} key={`${product.id}-${idx}`} idx={idx}/>)}
     </Ul>

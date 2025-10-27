@@ -29,7 +29,7 @@ const getIcon = (icon, name) => {
 export const Input:FC<TypeProps> = ({ searchItem, setSearchItem, placeHolder, name, label, icon }) => {
   const ButtonIcon = useMemo(() => getIcon(icon, name), [icon, name])
 
-  return(
+  return (
     <Label className='input-wrapper'>
       {ButtonIcon && ButtonIcon}
       <input name={name} type='text' placeholder={placeHolder} value={searchItem} onChange={(e) => setSearchItem(e.target.value)}/>

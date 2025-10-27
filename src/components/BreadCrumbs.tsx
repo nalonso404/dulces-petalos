@@ -10,8 +10,7 @@ type TypeProps = {
 }
 
 export const BreadCrumbs:FC<TypeProps> = ({ data }) => {
-
-  return(
+  return (
     <Nav aria-label='breadcrumb'>
       <ol>
         <li><Link href={'/'}> Inicio </Link></li>
@@ -32,10 +31,10 @@ const Nav = styled.nav`
   max-width: 1200px;
   
   > ol {
-    list-style: none;
     display: flex;
     flex-direction: row;
     gap: 4px;
+    list-style: none;
 
     >li {
       ${font16_24(400, '--font-dm-sans')}
@@ -56,7 +55,6 @@ const Nav = styled.nav`
 
         &:hover {
           color: var(--color-text);
-        
         }
       }
     }

@@ -17,7 +17,7 @@ type Props = {
 export const ProductCard:FC<Props> = memo(({ data, idx }) => {
   const { id, name, binomialName, price, imgUrl } = data
 
-  return(
+  return (
     <Li variants={cardVariants} initial='initial' animate='animate' exit='exit' transition={{ duration: 0.25, ease: 'easeOut' }}>
       <Link href={`/product/${id}`}>
         <div>
@@ -48,8 +48,8 @@ const Li = styled(motion.li)`
   transition: all 0.4s cubic-bezier(0.1, 0, 0.3, 1);
 
   &:hover {
-    transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    transform: translateY(-2px);
   }
 
   .image_wrapper {

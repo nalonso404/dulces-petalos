@@ -10,7 +10,7 @@ type Props = {
 }
 
 export const ErrorFeedBack:FC<Props> = ({ data }) => {
-  return(
+  return (
     <Div>
       {data === 'not-found'? 
         <>
@@ -18,7 +18,6 @@ export const ErrorFeedBack:FC<Props> = ({ data }) => {
           <p>Lo sentimos, esta flor no existe 🌸</p>
           <Link href="/">Volver al inicio</Link>
         </>
-
         :
         <>
           <h2>Uy 😥 Ha ocurrido un error</h2>
@@ -26,7 +25,6 @@ export const ErrorFeedBack:FC<Props> = ({ data }) => {
           <p>No hemos podido cargar el contenido ahora mismo…</p>
         </>
       }
-
     </Div>
   )
 } 
@@ -44,8 +42,8 @@ const Div = styled.div`
   }
 
   a {
-    margin-top: 20px;
     color: var(--color-grape);
+    margin-top: 20px;
     transition: color 0.2s ease-in-out;
 
     &:hover {

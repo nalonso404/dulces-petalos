@@ -17,7 +17,7 @@ export const ProductDetail:FC<Props> = memo(({ data }) => {
   const { id, name, binomialName, price, imgUrl, wateringsPerWeek, fertilizerType } = data
   const stringWatering = useMemo(() => wateringsPerWeek === 1 ? `Regar ${wateringsPerWeek} vez por semana` : `Regar ${wateringsPerWeek} veces por semana` ,[wateringsPerWeek])
   
-  return(
+  return (
     <Article data-id={id} variants={cardVariants} initial='initial' animate='animate' exit='exit' transition={{ duration: 0.25, ease: 'easeOut' }} layout>
       <div className='image_wrapper'>
         <Image src={imgUrl} alt={name} fill sizes='(max-width: 768px) 100vw, (max-width: 1200px) 70vw, 905px' priority={true}/>
@@ -47,16 +47,15 @@ const Article = styled(motion.article)`
       flex: 1 1 100%;
       height: auto;
     }
-
   `)}
 
   display: flex;
   flex-direction: row;
   flex: 1; 
+  gap: 24px;
   margin-top: 40px;
   min-height: calc(100vh - 200px);
   width: 100%;
-  gap: 24px;
 
   .image_wrapper {
     flex: 1 1 50%;
@@ -94,10 +93,9 @@ const Article = styled(motion.article)`
     }
 
     ul {
-      list-style-type: '· ';
       list-style-position: inside;
+      list-style-type: '· ';
       padding-left: 16px;
-
       
       >li {
         ${font14_21(400, '--font-dm-sans')}

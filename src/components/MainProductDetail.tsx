@@ -14,7 +14,7 @@ type Props = {
 export const MainProductDetail:FC<Props> = memo(({ data }) => {
   const { name } = data
 
-  return(
+  return (
     <Main>
       <BreadCrumbs data={name} />
       <section aria-label='product detail'>
@@ -32,8 +32,8 @@ const Main = styled.main`
   width: 100%;
 
   > section {
-    max-width: 1200px;
     margin: 0 auto;
+    max-width: 1200px;
   }
   
 `

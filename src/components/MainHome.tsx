@@ -29,7 +29,7 @@ export const MainHome:FC<Props> = memo(({ data }) => {
   const [searchItem, setSearchItem] = useState('')
   const filtered = useMemo(() => getFilteredData(data, searchItem) , [data, searchItem])
 
-  return(
+  return (
     <Main>
       <div className='search_by'>
         <Input name='search' searchItem={searchItem} setSearchItem={setSearchItem} placeHolder='Busca en nuestra tienda' icon={true}/>

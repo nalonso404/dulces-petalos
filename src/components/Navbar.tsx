@@ -5,9 +5,8 @@ import { SvgIcon } from './SvgIcon'
 import styled from 'styled-components'
 
 export const Navbar:FC = ({ }) => {
-
   return (
-    <Nav >
+    <Nav>
       <ul>
         <li>
           <a href={'/'}>
@@ -21,7 +20,6 @@ export const Navbar:FC = ({ }) => {
 
 
 const Nav = styled.nav`
-
   align-items: center;
   background-color: #FFFFFF;
   display: flex;

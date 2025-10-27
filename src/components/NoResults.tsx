@@ -8,8 +8,7 @@ type Props = {
 }
 
 export const NoResults:FC<Props> = (({ searchItem }) => {
-
-  return(
+  return (
     <Div>
       <h2>No hay resultados para {searchItem} </h2>
     </Div>
