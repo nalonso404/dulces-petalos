@@ -7,6 +7,7 @@ import { motion } from 'framer-motion'
 import type { TypeProduct } from '@/schema/product'
 import { font14_21, font16_24, font28_42, font48_72, mobile } from '@/styles'
 import { translateFertilizerType } from '@/utils'
+import { cardVariants } from './ProductCard'
 
 type Props = {
   data: TypeProduct
@@ -109,11 +110,3 @@ const Article = styled(motion.article)`
 
 `
 
-
-
-
-const cardVariants = { 
-  initial: { opacity: 0, scale: 0.95, y: 20 }, 
-  animate: { opacity: 1, scale: 1, y: 0 }, 
-  exit: { opacity: 0, scale: 0.9, y: -20 }, 
-}

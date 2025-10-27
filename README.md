@@ -35,7 +35,6 @@ JAKALA_API='https://dulces-petalos.jakala.es/api/v1'
 # 🌸 Floristería Dulces Pétalos
 
 Aplicación web desarrollada en **React** para mostrar el catálogo de productos de la floristería **Dulces Pétalos**.  
-El proyecto tiene como objetivo practicar el desarrollo de una SPA con consumo de API, navegación entre vistas y filtrado dinámico.
 
 ---
 
