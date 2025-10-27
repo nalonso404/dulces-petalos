@@ -11,6 +11,19 @@ const __dirname = dirname(__filename)
 
 export default [
   {
+    ignores: [
+      '**/.*',
+      '.next/',
+      'next-env.d.ts',
+      'node_modules/',
+      'dist/',
+      'out/',
+      '.yarn/',
+      '**/*.json',
+      'eslint.config.js'
+    ]
+  },
+  {
     files: ['**/*.{js,jsx,mjs,cjs,ts,tsx}'],
     languageOptions: {
       ecmaVersion: 7,
@@ -62,16 +75,6 @@ export default [
       quotes: [2, 'single'],
       semi: [2, 'never'],
       'react/display-name': [0, { ignoreTranspilerName: true }]
-    },
-    ignores: [
-      '**/.*',
-      'out/*',
-      '.next/*',
-      'dist/*',
-      'node_modules/*',
-      '.yarn',
-      '**/*.json',
-      'eslint.config.js'
-    ]
+    }
   }
 ]
